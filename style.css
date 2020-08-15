@@ -1,0 +1,171 @@
+:root {
+    --dark-grayish-blue: rgb(73, 76, 95);
+    --gradient: linear-gradient(90deg, var(--light-purple), var(--purple));
+    --grayish-blue: rgb(109, 112, 141);
+    --light-grayish-blue: rgb(179, 181, 198);
+    --light-purple: rgb(163, 168, 240);
+    --ligthen-grayish-blue: rgb(246, 246, 254);
+    --purple: rgb(105, 111, 221);
+    --transition: all .2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { 
+    height: 100%;
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--ligthen-grayish-blue);
+    background-image: url(images/bg-bottom.svg), url(images/bg-top.svg);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    padding: 2rem 10%;
+}
+
+header {
+    color: var(--dark-grayish-blue);
+    text-align: center;
+}
+
+header .switch {
+    color: var(--light-grayish-blue);
+    margin: 2rem;
+}
+
+header .switch input#indicator {
+    display: none;
+}
+
+header .switch label {
+    background: var(--gradient);
+    border-radius: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    height: 1.4rem;
+    margin: 0 1rem;
+    padding: .2rem;
+    position: relative;
+    transition: var(--transition);
+    vertical-align: middle;
+    width: 2.4rem;
+}
+
+header .switch label::after {
+    background: #fff;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    transition: var(--transition);
+}
+
+header .switch input:checked + label::after {
+    transform: translateX(1rem);
+}
+
+main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+main .card {
+    background: #fff;
+    border-radius: .5rem;
+    color: var(--grayish-blue);
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+}
+
+main .card .price {
+    color: var(--dark-grayish-blue);
+    font-size: 3rem;
+    margin:  2rem 0;
+}
+
+main .card .items .item {
+    border-bottom: 1px solid  var(--ligthen-grayish-blue);
+    padding: 1rem;
+}
+
+main .card .item:first-child{
+    border-top: 1px solid var(--ligthen-grayish-blue);
+}
+
+main .card .btn {
+    background: none;
+    border-radius: .5rem;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    margin-top: 2rem;
+    outline: none;
+    padding: .75rem .5rem;
+    text-transform: uppercase;
+    transition: var(--transition);
+    width: 100%;
+}
+
+main .card .btn:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: #fff;
+}
+
+main.annually .card .price.monthly {
+    display: none;
+}
+
+main.monthly .card .price.annually {
+    display: none;
+}
+
+main .card.pro {
+    background: var(--gradient);
+    color: #fff;
+    padding: 3rem 2rem;
+    z-index: 1;
+}
+
+main .card.pro .price {
+    color: #fff;
+}
+
+main .card.pro .btn {
+    background: #fff;
+    color: var(--purple);
+    border-color: transparent;
+}
+
+main .card.pro .btn:hover {
+    background: none;
+    border-color: #fff !important;
+    color: #fff;
+}
+
+main .card.basic {
+    border-radius: .5rem 0 0 .5rem;
+}
+
+main .card.master {
+    border-radius: 0 .5rem .5rem 0;
+}
+
+footer {
+    display: none;
+}
