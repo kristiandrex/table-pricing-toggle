@@ -27,7 +27,7 @@ body {
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
     height: 100%;
-    padding: 2rem 10%;
+    padding: 2rem;
 }
 
 header {
@@ -37,7 +37,7 @@ header {
 
 header .switch {
     color: var(--light-grayish-blue);
-    margin: 2rem;
+    margin-top: 2rem;
 }
 
 header .switch input#indicator {
@@ -76,6 +76,7 @@ main {
     align-items: center;
     display: flex;
     justify-content: center;
+    margin: 2rem 0;
 }
 
 main .card {
@@ -168,4 +169,16 @@ main .card.master {
 
 footer {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    main .card {
+        border-radius: .5rem !important;
+        margin-bottom: 2rem;
+    }
 }
